@@ -1,0 +1,26 @@
+import re
+
+name_list = ["Erwin Lindemann", "Walter Hoppenstedt", "Liselotte Hoppenstedt", "Heinrich Loose", "Dicki Hoppenstedt", "Gwyneth Molesworth"]
+custom_list = ["Match eins: 1", "Match zwei: 20", "Match drei: 314", "Non-match eins: 1EU", "Non-match zwei: x2", "Non-match drei: 1x2"]
+
+# -=-=-=-=-=-=-=- Nr. 1 -=-=-=-=-=-=-=-
+
+searcher = re.compile(r'.*Hoppenstedt')
+search_result = []
+for i in name_list:
+	matchObject = searcher.search(i)
+	if matchObject:
+		search_result.append(matchObject.string)
+
+# -=-=-=-=-=-=-=- Nr. 2 -=-=-=-=-=-=-=-
+
+searcher = re.compile(r'\b\d+\b')
+search_result = []
+for i in custom_list:
+	matchObject = searcher.search(i)
+	if matchObject:
+		search_result.append(matchObject.string)
+
+print(search_result)
+
+
