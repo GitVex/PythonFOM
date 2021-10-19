@@ -1,0 +1,66 @@
+text_1 = "Hallo Welt"
+text_2 = "FOM"
+tupel = tuple(range(1, 11))
+liste_1 = list(range(1, 11))
+liste_2 = list(range(6, 16))
+zahl_1 = 1
+zahl_2 = 12
+seperator_count = 20
+
+print("-"*seperator_count, "Nr. 1", "-"*seperator_count,  )
+print("Länge text_1:", len(text_1), "\t| Länge tupel:", len(tupel))
+print("\n")
+
+print("-"*seperator_count, "Nr. 2", "-"*seperator_count,  )
+print("text_1[0]:", text_1[0], "\t|  tupel[0]:", tupel[0])
+print("\n")
+
+print("-"*seperator_count, "Nr. 3", "-"*seperator_count,  )
+print("text_1[0:2]:", text_1[0:2], "\t|  tupel[tupel[len(tupel)-4:len(tupel)-1]]:", tupel[len(tupel)-4:len(tupel)-1])
+print("\n")
+
+print("-"*seperator_count, "Nr. 4", "-"*seperator_count,  )
+print("liste_1[0::2]:", liste_1[0::2])
+print("\n")
+
+print("-"*seperator_count, "Nr. 5", "-"*seperator_count,  )
+print("max(liste_1):", max(liste_1), "\t| min(liste_2)", min(liste_2))
+print("\n")
+
+print("-"*seperator_count, "Nr. 6", "-"*seperator_count,  )
+liste_1 *= 3
+print("liset_1 edited:", liste_1)
+print("\n")
+
+print("-"*seperator_count, "Nr. 7", "-"*seperator_count,  )
+gesamtliste = liste_1 + liste_2 + list(tupel)
+print("Länge gesamtliste:", len(gesamtliste), "\t|" ,gesamtliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 8", "-"*seperator_count,  )
+print("ist", zahl_1, "vorhanden?:", gesamtliste.index(zahl_1).__bool__())
+print("\n")
+
+print("-"*seperator_count, "Nr. 9", "-"*seperator_count,  )
+print("Zahl", zahl_1, "tritt das erste mal bei Position", gesamtliste.index(zahl_1)+1, "auf")
+print("\n")
+
+print("-"*seperator_count, "Nr. 10", "-"*seperator_count,  )
+print("Die Zahl", zahl_1, "kommt", gesamtliste.count(zahl_1), "mal vor")
+print("\n")
+
+print("-"*seperator_count, "Nr. 11", "-"*seperator_count,  )
+foundArray = []
+for i in range(0, len(gesamtliste)):
+	if gesamtliste[i] == zahl_1:
+		foundArray.append(i)
+print("Die Zahl", zahl_1, "kommt an den Indicies:", foundArray, "vor")
+print("\n")
+
+print("-"*seperator_count, "Nr. 12", "-"*seperator_count,  )
+text_neu = text_1[0:text_1.index(" ")] + " " + text_2 + "!"
+print("text_neu:", text_neu)
+
+
+
+
