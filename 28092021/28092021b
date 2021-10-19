@@ -1,0 +1,126 @@
+gerade = list(range(2, 22, 2))
+ungerade = list(range(1, 20, 2))
+seperator_count = 20
+multiplier = 10
+
+print("-"*seperator_count, "Nr. 1", "-"*seperator_count)
+print("Gerade Zahlen:", gerade, "Ungerade Zahlen:", ungerade)
+print("\n")
+
+print("-"*seperator_count, "Nr. 2", "-"*seperator_count)
+sorted_list = [*gerade, *ungerade]
+sorted_list.sort()
+print("Sortierte Liste:", sorted_list)
+print("\n")
+
+print("-"*seperator_count, "Nr. 3", "-"*seperator_count)
+a, b, c = sorted_list[1:6:2]
+print("A:", a, "B:", b, "C:", c)
+print("\n")
+
+print("-"*seperator_count, "Nr. 4", "-"*seperator_count)
+gerade_mal_zehn = [i*multiplier for i in gerade]
+print("Gerade Zahlen mal", multiplier, ":", gerade_mal_zehn)
+print("\n")
+
+print("-"*seperator_count, "Nr. 5", "-"*seperator_count)
+gerade[1::2] = gerade_mal_zehn[1::2]
+print("Jede zweite zahl mal", multiplier, "genommen:", gerade)
+print("\n")
+
+print("-"*seperator_count, "Nr. 6", "-"*seperator_count)
+gerade_mal_zehn.sort(reverse=True)
+print("Gerade Zahlen mal", multiplier, "aber rückwärts sortiert:", gerade_mal_zehn)
+print("\n")
+
+print("-"*seperator_count, "Nr. 7", "-"*seperator_count)
+zahlen = list(range(-4, 3))
+zahlen.sort(key=abs)
+print("Zahlen von -4 bis 3 aber nach Abstand zu 0 sortiert:", zahlen)
+print("\n")
+
+print("-"*seperator_count, "Nr. 8", "-"*seperator_count)
+einkaufsliste = ["Äpfel", "Birnen", "Orange", "Bananen"]
+print("Einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 9", "-"*seperator_count)
+for i in range(0, len(einkaufsliste)*2, 2):
+	einkaufsliste.insert(i, "Schokolade")
+print("Einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 10", "-"*seperator_count)
+einkaufsliste[0] = "Erdnüsse"
+print("Einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 11", "-"*seperator_count)
+del einkaufsliste[0::2]
+print("Einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 12", "-"*seperator_count)
+einkaufsliste2 = [*einkaufsliste]
+print("Einkaufsliste2:", einkaufsliste2, "| inherited from einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 13", "-"*seperator_count)
+einkaufsliste.reverse()
+print("Einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 14", "-"*seperator_count)
+numbers = list(range(0, len(einkaufsliste)))
+numbers.sort(reverse=True)
+for i in numbers:
+	print(einkaufsliste[i])
+	einkaufsliste.pop()
+print("Einkaufsliste:", einkaufsliste)
+print("\n")
+
+print("-"*seperator_count, "Nr. 15", "-"*seperator_count)
+einkaufsliste2.append("Studentenfutter")
+print("Einkaufsliste:", einkaufsliste2)
+print("\n")
+
+print("-"*seperator_count, "Nr. 16", "-"*seperator_count)
+del einkaufsliste2[einkaufsliste2.index("Birnen")]
+print("Einkaufsliste:", einkaufsliste2)
+print("\n")
+
+print("-"*seperator_count, "Nr. 17", "-"*seperator_count)
+
+# Hr. Erwin Lindemann, Hr. Walter Hoppestedt,
+# Fr. Lieselotte Hoppenstedt, Hr. Heinrich Loose, Mrs. Gwyneth Molesworth
+
+vorname = ["Erwin", "Walter", "Lieselotte", "Heinrich", "Gwyneth"]
+nachname = ["Lindemann", "Hoppestedt", "Hoppenstedt", "Loose", "Molesworth"]
+anreden = ["Hr.", "Hr.", "Fr.", "Hr.", "Mrs."]
+
+print(vorname, nachname, anreden)
+print("\n")
+
+print("-"*seperator_count, "Nr. 18", "-"*seperator_count)
+anreden_neu = []
+for i in anreden:
+	if i == "Fr." or i == "Mrs.":
+		anreden_neu.append("Frau")
+	elif i == "Hr.":
+		anreden_neu.append("Herr")
+
+print("Anreden neu:", anreden_neu)
+print("\n")
+
+print("-"*seperator_count, "Nr. 19", "-"*seperator_count)
+personen = list(zip(anreden_neu, vorname, nachname))
+
+print("Teilnehmende Personen:", personen)
+print("\n")
+
+print("-"*seperator_count, "Nr. 20", "-"*seperator_count)
+
+for i in range(0, len(personen)):
+	print("<Nr." + str(i + 1) + ">:", personen[i][0], personen[i][1], personen[i][2])
+print("\n")
+
