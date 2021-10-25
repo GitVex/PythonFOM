@@ -45,7 +45,7 @@ def form_row(number, side):
 # Forming the window screen
 tut = turtle.Screen()
 tut.bgcolor("black")
-tut.title("LMAOIOOOOOOO")
+tut.title("look at em go")
 startx = -(turtle.screensize()[0]/2)
 starty = turtle.screensize()[1]/2
 
