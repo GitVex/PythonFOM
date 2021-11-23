@@ -1,25 +1,12 @@
-# import the turtle modules
 import random
 import turtle
+from Personals.colorconverter import hex_to_rgb1
 
-# color list
-# inital hex input
-color_list = ["f2c166","174a75","133d61","6592e6","5d81a1","fcdb9d"]
+color_list = ["0f211b","083829","004f36","b5ca8d","daedbd","eee1b3"]
 
-# convert to rgb255
-for i in color_list:
-    color_list[color_list.index(i)] = tuple([int(i[0:2], 16), int(i[2:4], 16), int(i[4:6], 16)])
+# convert to rgb1
+color_list = hex_to_rgb1(color_list)
 
-# convert to rgb1.0
-for i in color_list:
-    temp = [i[x] for x in range(0, 3)]
-    for x in temp:
-        temp[temp.index(x)] = round(x/255, 4)
-    temp = tuple(temp)
-    color_list[color_list.index(i)] = temp
-
-# define the function
-# for triangle
 def form_hex(side):
     my_pen.color(color_list[random.randrange(0, len(color_list))])
     for i in range(6):
@@ -42,7 +29,6 @@ def form_row(number, side):
         form_hex(side)
 
 
-# Forming the window screen
 tut = turtle.Screen()
 tut.bgcolor("black")
 tut.title("look at em go")
